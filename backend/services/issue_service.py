@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from models.issue import Issue
+from ..models.issue import Issue
 
 
 def get_all_issues(db: Session, search=None, status=None):
@@ -11,6 +11,7 @@ def get_all_issues(db: Session, search=None, status=None):
 
     if status:
         query = query.filter(Issue.status == status)
+
 
     return query.all()
 

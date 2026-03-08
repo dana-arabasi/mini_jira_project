@@ -27,4 +27,5 @@ function FilterBar({ filters, setFilters }) {
   );
 }
 
+
 export default FilterBar;

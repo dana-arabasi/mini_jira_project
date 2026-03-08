@@ -68,4 +68,5 @@ function IssueCard({ issue, onDeleted, onEdit }) {
   );
 }
 
+
 export default IssueCard;

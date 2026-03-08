@@ -1,14 +1,15 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
-from database import SessionLocal
-from schemas.issue import IssueCreate, IssueUpdate, IssueOut
-from services.issue_service import *
+from ..database import SessionLocal
+from ..schemas.issue import IssueCreate, IssueUpdate, IssueOut
+from ..services.issue_service import *
 
 router = APIRouter(
     prefix="/issues",
     tags=["Issues"]
 )
+
 
 
 def get_db():
