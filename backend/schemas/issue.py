@@ -17,6 +17,7 @@ class IssueUpdate(BaseModel):
     priority: str
 
 
+
 class IssueOut(BaseModel):
 
     id: int

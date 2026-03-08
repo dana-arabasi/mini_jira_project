@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from database import Base, engine
 from routers import issues
 
+
 app = FastAPI()
 
 Base.metadata.create_all(bind=engine)
