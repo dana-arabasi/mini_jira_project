@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import API from "../api";
 import IssueForm from "../components/IssueForm";
 import IssueCard from "../components/IssueCard";
 import FilterBar from "../components/FilterBar";
-
-
 
 function IssuesPage() {
 
@@ -12,6 +11,13 @@ function IssuesPage() {
   const [editingIssue, setEditingIssue] = useState(null);
   const [filters, setFilters] = useState({ search: "", status: "" });
   const [showModal, setShowModal] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
 
   const fetchIssues = async () => {
 
@@ -43,15 +49,26 @@ function IssuesPage() {
             Issue Tracker
           </h1>
 
-          <button
-            onClick={() => {
-              setEditingIssue(null);
-              setShowModal(true);
-            }}
-            className="bg-indigo-600 hover:bg-indigo-500 px-5 py-2 rounded-lg font-medium transition shadow"
-          >
-            Add Issue
-          </button>
+          <div className="flex gap-3">
+
+            <button
+              onClick={() => {
+                setEditingIssue(null);
+                setShowModal(true);
+              }}
+              className="bg-indigo-600 hover:bg-indigo-500 px-5 py-2 rounded-lg font-medium transition shadow"
+            >
+              Add Issue
+            </button>
+
+            <button
+              onClick={handleLogout}
+              className="bg-red-600 hover:bg-red-500 px-5 py-2 rounded-lg font-medium transition shadow"
+            >
+              Logout
+            </button>
+
+          </div>
 
         </div>
 

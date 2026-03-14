@@ -18,7 +18,7 @@ function FilterBar({ filters, setFilters }) {
       >
         <option value="">All Status</option>
         <option value="open">Open</option>
-        <option value="in progress">In Progress</option>
+        <option value="in_progress">In Progress</option>
         <option value="closed">Closed</option>
       </select>
 
