@@ -6,6 +6,7 @@ function IssueCard({ issue, onDeleted, onEdit }) {
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [deleting, setDeleting] = useState(false);
 
+
   const statusColors = {
     open: "bg-green-500/20 text-green-400",
     in_progress: "bg-yellow-500/20 text-yellow-400",

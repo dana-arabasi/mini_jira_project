@@ -45,6 +45,7 @@ function FilterBar({ filters, setFilters }) {
         <option value="updated_at">Sort: Updated</option>
       </select>
 
+
       <select
         value={filters.order}
         onChange={e => setFilters({ ...filters, order: e.target.value })}

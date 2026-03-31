@@ -23,6 +23,7 @@ class IssueCreate(BaseModel):
     priority: IssuePriority = IssuePriority.medium
 
 
+
 class IssueUpdate(BaseModel):
     title: Optional[str] = Field(None, min_length=3, max_length=255)
     description: Optional[str] = Field(None, min_length=0, max_length=1000)

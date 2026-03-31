@@ -73,6 +73,7 @@ def edit_issue(issue_id: int, issue: IssueUpdate, db: Session = Depends(get_db))
     return updated
 
 
+
 @router.delete("/{issue_id}")
 def remove_issue(issue_id: int, db: Session = Depends(get_db)):
 
