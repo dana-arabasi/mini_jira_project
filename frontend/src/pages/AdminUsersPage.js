@@ -49,7 +49,7 @@ function AdminUsersPage() {
       setNewUserEmail("");
       setNewUserPassword("");
       setShowCreateModal(false);
-      fetchUsers(); // Refresh the list
+      fetchUsers();
     } catch (err) {
       alert("Failed to create user: " + err.response?.data?.message || err.message);
     }
@@ -73,9 +73,10 @@ function AdminUsersPage() {
       return;
     }
 
+
     try {
       await API.delete(`/auth/users/${userId}`);
-      fetchUsers(); // Refresh the list
+      fetchUsers();
     } catch (err) {
       alert("Failed to delete user: " + err.response?.data?.message || err.message);
     }
@@ -87,7 +88,7 @@ function AdminUsersPage() {
   };
 
   if (!currentUser || currentUser.role !== "admin") {
-    return null; // Will redirect
+    return null;
   }
 
   return (

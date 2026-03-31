@@ -11,6 +11,7 @@ from backend.utils.limiter import limiter
 from backend.models import user, issue
 from backend.routers import auth, issues
 
+
 from slowapi.errors import RateLimitExceeded
 from slowapi.middleware import SlowAPIMiddleware
 from slowapi import _rate_limit_exceeded_handler

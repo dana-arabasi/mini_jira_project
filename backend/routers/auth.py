@@ -8,6 +8,7 @@ from backend.schemas.user import UserCreate, UserOut
 from backend.services.auth_service import create_user, authenticate_user
 from backend.utils.limiter import limiter
 
+
 router = APIRouter(
     prefix="/auth",
     tags=["auth"]

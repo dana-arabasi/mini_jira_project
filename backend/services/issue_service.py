@@ -64,6 +64,7 @@ def create_issue(db: Session, data):
         raise
 
 
+
 def update_issue(db: Session, issue_id: int, data):
 
     issue = get_issue(db, issue_id)
